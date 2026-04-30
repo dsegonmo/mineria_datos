@@ -381,6 +381,7 @@ ax.axhline(0, color='black', lw=0.8)
 ax = axes[1]
 y_pred = modelo.predict(X_plot)
 y_real = f_objetivo(X_plot.ravel())
+ax.scatter(X_train, y_train, s=10, color='gray', alpha=0.4, zorder=2, label='Observaciones')
 ax.plot(X_plot, y_real, 'k--', lw=2, label='Función real')
 ax.plot(X_plot, y_pred, color='#4C72B0', lw=2.5, label='Combinación de neuronas (red)')
 ax.fill_between(X_plot.ravel(), y_real, y_pred, alpha=0.15, color='red', label='Error')
